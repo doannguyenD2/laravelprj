@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         $validate = Validator::make($request->all(), [
             'name' => 'required|max:55',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
         ]);
         if($validate->fails()) return 'Loi';
@@ -30,6 +30,20 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        $validate = Validator::make($request->all(), [
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if($validate->fails()) return 'Loi';
+
+        if(!auth()->attempt($request->only('email','password')))
+        {
+            return 'Sai email hoac mat khau';
+        }
+
+        $accessToken = auth()->user()->createToken('authToken')->accessToken;
+        return response(['user'=> auth()->user(), 'accessToken' => $accessToken]);
 
     }
 }
