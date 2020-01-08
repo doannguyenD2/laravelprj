@@ -2,7 +2,8 @@
 
 ## Laravel passport
 
-> Offical documentation of laravel passport are available in [here](https://laravel.com/docs/6.x/passport)
+> Offical documentation of laravel passport are available in [here](https://laravel.com/docs/6.x/passport)  
+> Tutorial avaiable in [here](https://github.com/anil-sidhu/laravel-passport-poc)
 
 ### 1.Installation
 
