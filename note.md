@@ -125,4 +125,3 @@ OAuth2 with authorization code
 #### Redirecting For Authorization
 
 ### [Personal Access Tokens](https://laravel.com/docs/6.x/passport#personal-access-tokens)
-
